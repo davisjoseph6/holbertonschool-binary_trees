@@ -2,7 +2,7 @@
 /**
  * binary_tree_node - func to create a binary tree_node
  * @parent: is pointer to the parent node
- * value: an intger that will be stored in the node
+ * @value: an intger that will be stored in the node
  * Return: a pointer to the new_node
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
