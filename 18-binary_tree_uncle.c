@@ -9,26 +9,22 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	binary_tree_t *grand_parent;
 
 	grand_parent = node->parent->parent;
-	if (node != NULL && node->parent != NULL && node->parent->parent != NULL)
+	if (node == NULL || node->parent == NULL || node->parent->parent == NULL)
 	{
-		if (node->parent == grand_parent->left)
+		return (0);
+	}
+	if (node->parent == grand_parent->left)
+	{
+		if (grand_parent->right != NULL)
 		{
-			if (grand_parent->right != NULL)
-			{
-				return (grand_parent->right);
-			}
+			return (grand_parent->right);
 		}
-		else if (node->parent == grand_parent->right)
+	}
+	else if (node->parent == grand_parent->right)
+	{
+		if (grand_parent->left != NULL)
 		{
-			if (grand_parent->left != NULL)
-			{
-				return (grand_parent->left);
-			}
-		}
-		else
-		{
-			printf("nil");
-			return (NULL);
+			return (grand_parent->left);
 		}
 	}
 	return (NULL);
